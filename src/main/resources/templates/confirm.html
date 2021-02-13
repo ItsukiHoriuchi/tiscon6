@@ -28,6 +28,7 @@
           <th style="width: 40%">氏名</th>
           <td><span th:text="*{customerName}"></span></td>
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
+          <span th:if="${#fields.hasErrors('customerName')}">エラーです！</span>
         </tr>
         <tr>
           <th>連絡先TEL</th>
