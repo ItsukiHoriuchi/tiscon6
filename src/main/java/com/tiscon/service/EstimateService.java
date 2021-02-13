@@ -45,6 +45,11 @@ public class EstimateService {
     public void registerOrder(UserOrderDto dto) {
         Customer customer = new Customer();
         BeanUtils.copyProperties(dto, customer);
+
+        if(existSameData(customer)){
+
+        }
+
         estimateDAO.insertCustomer(customer);
 
         if (dto.getWashingMachineInstallation()) {
