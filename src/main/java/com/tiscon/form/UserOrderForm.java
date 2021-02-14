@@ -17,7 +17,7 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank
-    @Numeric
+    @Numeric(message = "電話番号は半角数字で入力してください")
     private String tel;
 
     @Email
@@ -36,19 +36,19 @@ public class UserOrderForm {
     @NotBlank
     private String newAddress;
 
-    @Numeric
+    @Numeric(message = "段ボールの個数は半角数字で入力してください")
     @NotBlank
     private String box;
 
-    @Numeric
+    @Numeric(message = "ベッドの個数は半角数字で入力してください")
     @NotBlank
     private String bed;
 
-    @Numeric
+    @Numeric(message = "自転車の個数は半角数字で入力してください")
     @NotBlank
     private String bicycle;
 
-    @Numeric
+    @Numeric(message = "洗濯機の個数は半角数字で入力してください")
     @NotBlank
     private String washingMachine;
 

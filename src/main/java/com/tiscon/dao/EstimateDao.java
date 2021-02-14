@@ -153,6 +153,7 @@ public class EstimateDao {
      *
      * @return 真理値
      */
+    /*
     public boolean existSameData(Customer customer) {
         String sql = "SELECT CUSTOMER_ID FROM CUSTOMER WHERE " +
                 "OLD_PREFECTURE_ID = :oldPrefectureId AND" +
@@ -162,7 +163,9 @@ public class EstimateDao {
                 "EMAIL = :" +
                 "OLD_ADDRESS = :" +
                 "NEW_ADDRESS";
-        return parameterJdbcTemplate.query(sql,
+        return parameterJdbcTemplate.query((sql,
                 BeanPropertyRowMapper.newInstance(Prefecture.class));
     }
+
+     */
 }
