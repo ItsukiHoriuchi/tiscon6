@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top画面</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"
+          href="http://fonts.googleapis.com/css?family=Exo:900"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+</head>
+<body>
+
+<nav th:insert="header.html :: header"></nav>
+<div class="ui main container">
+    <div class="text-center">
+        <h2>お客様のお申し込みはすでに完了しております。</h2>
+        <p>お電話にて正確な見積もり結果をお伝えいたします。</p>
+    </div>
+</div>
+<script src="../js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+<script src="../js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

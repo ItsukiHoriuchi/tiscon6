@@ -1,6 +1,9 @@
 package com.tiscon.dao;
 
 import com.tiscon.domain.*;
+import com.tiscon.dto.UserOrderDto;
+import org.springframework.beans.BeanUtils;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.*;
@@ -153,16 +156,63 @@ public class EstimateDao {
      *
      * @return 真理値
      */
-    public boolean existSameData(Customer customer) {
+    public boolean existSameData(UserOrderDto dto) {
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(dto, customer);
+
         String sql = "SELECT CUSTOMER_ID FROM CUSTOMER WHERE " +
-                "OLD_PREFECTURE_ID = :oldPrefectureId AND" +
-                "NEW_PREFRCTURE_ID = :newPrefectureId AND" +
-                "CUSTOMER_NAME = : AND" +
-                "TEL = :" +
-                "EMAIL = :" +
-                "OLD_ADDRESS = :" +
-                "NEW_ADDRESS";
-        return parameterJdbcTemplate.query(sql,
-                BeanPropertyRowMapper.newInstance(Prefecture.class));
+                "OLD_PREFECTURE_ID = :oldPrefectureId AND " +
+                "NEW_PREFECTURE_ID = :newPrefectureId AND " +
+                "CUSTOMER_NAME = :customerName AND " +
+                "TEL = :tel AND " +
+                "EMAIL = :email AND " +
+                "OLD_ADDRESS = :oldAddress AND " +
+                "NEW_ADDRESS = :newAddress";
+
+        List<Integer> result = parameterJdbcTemplate.queryForList(sql, new BeanPropertySqlParameterSource(customer), Integer.class);
+        if(result.isEmpty()) {
+            return false;
+        }
+
+        /*
+        for(Integer i : result){
+            SqlParameterSource paramSource = new MapSqlParameterSource("customerId", i);
+
+            String boxSql = "SELECT PACKAGE_NUMBER FROM CUSTOMER_PACKAGE WHERE CUSTOMER_ID = :customerId AND " +
+                    "PACKAGE_ID = 1";
+            if(dto.getBox() != parameterJdbcTemplate.queryForObject(boxSql, paramSource, Integer.class)){
+                return false;
+            }
+
+            String bedSql = "SELECT PACKAGE_NUMBER FROM CUSTOMER_PACKAGE WHERE CUSTOMER_ID = :customerId AND " +
+                    "PACKAGE_ID = 2";
+            if(dto.getBed() != parameterJdbcTemplate.queryForObject(bedSql, paramSource, Integer.class)){
+                return false;
+            }
+
+
+            String bikeSql = "SELECT PACKAGE_NUMBER FROM CUSTOMER_PACKAGE WHERE CUSTOMER_ID = :customerId AND " +
+                    "PACKAGE_ID = 3";
+            if(dto.getBicycle() != parameterJdbcTemplate.queryForObject(bikeSql, paramSource, Integer.class)){
+                return false;
+            }
+
+            String washSql = "SELECT PACKAGE_NUMBER FROM CUSTOMER_PACKAGE WHERE CUSTOMER_ID = :customerId AND " +
+                    "PACKAGE_ID = 4";
+            if(dto.getWashingMachine() != parameterJdbcTemplate.queryForObject(washSql, paramSource, Integer.class)){
+                return false;
+            }
+
+            String wmInstallSql = "SELECT SERVICE_ID FROM CUSTOMER_OPTION_SERVICE WHERE CUSTOMER_ID = :customerId";
+            List<Integer> servId= parameterJdbcTemplate.queryForList(wmInstallSql, paramSource, Integer.class);
+
+            if(servId.isEmpty() && dto.getWashingMachineInstallation()){
+                return false;
+            }else if(!servId.isEmpty() && !dto.getWashingMachineInstallation()){
+                return false;
+            }
+        }
+        */
+        return true;
     }
 }

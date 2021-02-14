@@ -157,6 +157,11 @@ public class EstimateController {
 
         UserOrderDto dto = new UserOrderDto();
         BeanUtils.copyProperties(userOrderForm, dto);
+
+        if (estimateDAO.existSameData(dto)){
+            return "existSame";
+        }
+
         estimateService.registerOrder(dto);
 
         return "complete";
