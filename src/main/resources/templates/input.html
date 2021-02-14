@@ -23,7 +23,7 @@
         <legend>個人情報</legend>
         <div class="form-group">
           <label for="customerName">氏名</label>
-          <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
+          <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" required/>
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL</label>
@@ -58,7 +58,7 @@
         <div class="form-group">
           <label for="theday">引越し予定月</label>
           <input type="number" id="theday" name="theday" th:field="*{theday}" class="form-control" value="1"
-          min="1" max="12" required/>
+                 min="1" max="12" required/>
         </div>
       </fieldset>
       <fieldset>
