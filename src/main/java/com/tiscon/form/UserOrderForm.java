@@ -27,19 +27,21 @@ public class UserOrderForm {
     @NotBlank(message="転居元住所（都道府県）が空欄です")
     private String oldPrefectureId;
 
-    @NotBlank(message="転居元住所（市区町村以下）が空欄です")
+    @NotBlank(message="転居元番地が空欄です")
     private String oldAddress;
 
-    @NotBlank
+    @NotBlank(message="転居元郵便番号が空欄です")
+    @Numeric(message="転居元郵便番号には半角数字を入力してください(ハイフンは不要)")
     private String oldPostalcode;
 
     @NotBlank(message="転居先住所（都道府県）が空欄です")
     private String newPrefectureId;
 
-    @NotBlank
+    @NotBlank(message="転居先郵便番号が空欄です")
+    @Numeric(message="転居先郵便番号には半角数字を入力してください(ハイフンは不要)")
     private String newPostalcode;
 
-    @NotBlank(message="転居先住所（市区町村以下）が空欄です")
+    @NotBlank(message="転居先番地が空欄です")
     private String newAddress;
 
     @Numeric(message="段ボールの個数には半角数字を入力してください")
