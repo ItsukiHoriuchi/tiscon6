@@ -40,6 +40,9 @@ public class UserOrderForm {
     @NotBlank(message="段ボールの個数が空欄です")
     private String box;
 
+    //@NotBlank
+    private int theday;
+
     @Numeric(message="ベッドの個数には半角数字を入力してください")
     @NotBlank(message="ベッドの個数が空欄です")
     private String bed;
@@ -109,6 +112,14 @@ public class UserOrderForm {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public int getTheday() {
+        return theday;
+    }
+
+    public void setTheday(int theday) {
+        this.theday = theday;
     }
 
     public String getBox() {
