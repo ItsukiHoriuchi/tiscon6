@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-
+javax.validation.constraints.NotBlank.message
 <head>
   <title>概算見積もり確認</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -45,7 +45,12 @@
           <input type="hidden" name="oldPrefectureId" id="oldPrefectureId" th:value="*{oldPrefectureId}"/>
         </tr>
         <tr>
-          <th>転居元住所（市区町村以下）</th>
+          <th>転居元郵便番号</th>
+          <td><span th:text="*{oldPostalcode}"></span></td>
+          <input type="hidden" name="oldPostalcode" id="oldPostalcode" th:value="*{oldPostalcode}"/>
+        </tr>
+        <tr>
+          <th>転居元住所（番地）</th>
           <td><span th:text="*{oldAddress}"></span></td>
           <input type="hidden" name="oldAddress" id="oldAddress" th:value="*{oldAddress}"/>
         </tr>
@@ -57,9 +62,19 @@
           <input type="hidden" name="newPrefectureId" id="newPrefectureId" th:value="*{newPrefectureId}"/>
         </tr>
         <tr>
-          <th>転居先住所（市区町村以下）</th>
+          <th>転居先郵便番号</th>
+          <td><span th:text="*{newPostalcode}"></span></td>
+          <input type="hidden" name="newPostalcode" id="newPostalcode" th:value="*{newPostalcode}"/>
+        </tr>
+        <tr>
+          <th>転居先住所（番地）</th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
+        </tr>
+        <tr>
+          <th>引越し予定月 </th>
+          <td><span th:text="*{theday}"></span></td>
+          <input type="hidden" name="theday" id="theday" th:value="*{theday}"/>
         </tr>
         </tbody>
       </table>

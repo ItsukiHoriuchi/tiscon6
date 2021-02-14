@@ -10,11 +10,17 @@ public class UserOrderDto {
 
     private String oldPrefectureId;
 
+    private String oldPostalcode;
+
     private String oldAddress;
 
     private String newPrefectureId;
 
+    private String newPostalcode;
+
     private String newAddress;
+
+    private int theday;
 
     private String box;
 
@@ -58,6 +64,14 @@ public class UserOrderDto {
         this.oldPrefectureId = oldPrefectureId;
     }
 
+    public String getOldPostalcode() {
+        return oldPostalcode;
+    }
+
+    public void setOldPostalcode(String oldPostalcode) {
+        this.oldPostalcode = oldPostalcode;
+    }
+
     public String getOldAddress() {
         return oldAddress;
     }
@@ -74,12 +88,28 @@ public class UserOrderDto {
         this.newPrefectureId = newPrefectureId;
     }
 
+    public String getNewPostalcode() {
+        return newPostalcode;
+    }
+
+    public void setNewPostalcode(String newPostalcode) {
+        this.newPostalcode = newPostalcode;
+    }
+
     public String getNewAddress() {
         return newAddress;
     }
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public int getTheday() {
+        return theday;
+    }
+
+    public void setTheday(int theday) {
+        this.theday = theday;
     }
 
     public int getBox() {

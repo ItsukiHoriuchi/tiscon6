@@ -10,6 +10,8 @@ public class PackageBox implements Serializable {
 
     private int box;
 
+    private int theday;
+
     public int getPackageId() {
         return packageId;
     }
@@ -32,5 +34,13 @@ public class PackageBox implements Serializable {
 
     public void setBox(int box) {
         this.box = box;
+    }
+
+    public int getTheday() {
+        return theday;
+    }
+
+    public void setTheday(int theday) {
+        this.theday = theday;
     }
 }

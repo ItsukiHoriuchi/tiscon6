@@ -23,4 +23,5 @@ public class CustomerOptionService implements Serializable {
     public void setServiceId(int serviceId) {
         this.serviceId = serviceId;
     }
+
 }
