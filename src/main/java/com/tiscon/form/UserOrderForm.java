@@ -27,11 +27,21 @@ public class UserOrderForm {
     @NotBlank
     private String oldPrefectureId;
 
+    public boolean isWashingMachineInstallation() {
+        return washingMachineInstallation;
+    }
+
+    @NotBlank
+    private String oldPostalcode;
+
     @NotBlank
     private String oldAddress;
 
     @NotBlank
     private String newPrefectureId;
+
+    @NotBlank
+    private String newPostalcode;
 
     @NotBlank
     private String newAddress;
@@ -87,6 +97,14 @@ public class UserOrderForm {
         this.oldPrefectureId = oldPrefectureId;
     }
 
+    public String getOldPostalcode() {
+        return oldPostalcode;
+    }
+
+    public void setOldPostalcode(String oldPostalcode) {
+        this.oldPostalcode = oldPostalcode;
+    }
+
     public String getOldAddress() {
         return oldAddress;
     }
@@ -101,6 +119,14 @@ public class UserOrderForm {
 
     public void setNewPrefectureId(String newPrefectureId) {
         this.newPrefectureId = newPrefectureId;
+    }
+
+    public String getNewPostalcode() {
+        return newPostalcode;
+    }
+
+    public void setNewPostalcode(String newPostalcode) {
+        this.newPostalcode = newPostalcode;
     }
 
     public String getNewAddress() {
