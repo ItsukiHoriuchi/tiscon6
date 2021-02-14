@@ -16,11 +16,15 @@ public class Customer implements Serializable {
 
     private String email;
 
+    private String oldPostalcode;
+
     private String oldAddress;
+
+    private String newPostalcode;
 
     private String newAddress;
 
-    private int theday;
+    private String theday;
 
     public int getCustomerId() {
         return customerId;
@@ -38,12 +42,28 @@ public class Customer implements Serializable {
         this.oldPrefectureId = oldPrefectureId;
     }
 
+    public String getOldPostalcode() {
+        return oldPostalcode;
+    }
+
+    public void setOldPostalcode(String oldPostalcode) {
+        this.oldPostalcode = oldPostalcode;
+    }
+
     public String getNewPrefectureId() {
         return newPrefectureId;
     }
 
     public void setNewPrefectureId(String newPrefectureId) {
         this.newPrefectureId = newPrefectureId;
+    }
+
+    public String getNewPostalcode() {
+        return newPostalcode;
+    }
+
+    public void setNewPostalcode(String newPostalcode) {
+        this.newPostalcode = newPostalcode;
     }
 
     public String getCustomerName() {
@@ -84,9 +104,9 @@ public class Customer implements Serializable {
         this.newAddress = newAddress;
     }
 
-    public int getTheday() { return theday; }
+    public String getTheday() { return theday; }
 
-    public void setTheday(int theday) {
+    public void setTheday(String theday) {
         this.theday = theday;
     }
 }
