@@ -23,7 +23,7 @@
         <legend>個人情報</legend>
         <div class="form-group">
           <label for="customerName">氏名</label>
-          <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
+          <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" required/>
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL</label>
@@ -39,7 +39,6 @@
             <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
-
         <div class="form-group">
           <label for="oldPostalcode">転居元郵便番号 </label>
           <input type="text" id="oldPostalcode" name="oldPostalcode" th:field="*{oldPostalcode}"
@@ -51,7 +50,6 @@
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
                  class="form-control" value="1-1-1"/>
         </div>
-
         <div class="form-group">
           <label for="newPrefectureId">転居先住所（都道府県）</label>
           <select id="newPrefectureId" name="newPrefectureId" class="form-control">
@@ -70,7 +68,11 @@
           <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}"
                  class="form-control" value="1-1-1"/>
         </div>
-
+        <div class="form-group">
+          <label for="theday">引越し予定月</label>
+          <input type="number" id="theday" name="theday" th:field="*{theday}" class="form-control" value="1"
+                 min="1" max="12" required/>
+        </div>
       </fieldset>
       <fieldset>
         <legend>荷物情報</legend>

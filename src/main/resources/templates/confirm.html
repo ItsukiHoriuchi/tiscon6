@@ -28,6 +28,7 @@
           <th style="width: 40%">氏名</th>
           <td><span th:text="*{customerName}"></span></td>
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
+          <span th:if="${#fields.hasErrors('customerName')}">エラーです！</span>
         </tr>
         <tr>
           <th>連絡先TEL</th>
@@ -72,6 +73,11 @@
           <th>転居先番地</th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
+        </tr>
+        <tr>
+          <th>引越し予定月 </th>
+          <td><span th:text="*{theday}"></span></td>
+          <input type="hidden" name="theday" id="theday" th:value="*{theday}"/>
         </tr>
         </tbody>
       </table>

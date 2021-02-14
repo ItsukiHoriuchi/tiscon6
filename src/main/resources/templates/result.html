@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-
+javax.validation.constraints.NotBlank.message
 <head>
   <title>概算見積もり確認</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -70,6 +70,11 @@
           <th>転居先住所（番地）</th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
+        </tr>
+        <tr>
+          <th>引越し予定月 </th>
+          <td><span th:text="*{theday}"></span></td>
+          <input type="hidden" name="theday" id="theday" th:value="*{theday}"/>
         </tr>
         </tbody>
       </table>
