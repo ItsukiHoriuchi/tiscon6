@@ -46,9 +46,6 @@ public class EstimateService {
         Customer customer = new Customer();
         BeanUtils.copyProperties(dto, customer);
 
-        if(existSameData(customer)){
-
-        }
 
         estimateDAO.insertCustomer(customer);
 
