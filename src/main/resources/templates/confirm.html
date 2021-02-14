@@ -51,7 +51,12 @@
           <td class="error"><span th:if="${#fields.hasErrors('oldPrefectureId')}">エラーです！</span></td>
         </tr>
         <tr>
-          <th>転居元住所（市区町村以下）</th>
+          <th>転居元郵便番号</th>
+          <td><span th:text="*{oldPostalcode}"></span></td>
+          <input type="hidden" name="oldPostalcode" id="oldPostalcode" th:value="*{oldPostalcode}"/>
+        </tr>
+        <tr>
+          <th>転居元番地</th>
           <td><span th:text="*{oldAddress}"></span></td>
           <input type="hidden" name="oldAddress" id="oldAddress" th:value="*{oldAddress}"/>
           <td class="error"><span th:if="${#fields.hasErrors('oldAddress')}">エラーです！</span></td>
@@ -65,7 +70,12 @@
           <td class="error"><span th:if="${#fields.hasErrors('newPrefectureId')}">エラーです！</span></td>
         </tr>
         <tr>
-          <th>転居先住所（市区町村以下）</th>
+          <th>転居先郵便番号</th>
+          <td><span th:text="*{newPostalcode}"></span></td>
+          <input type="hidden" name="newPostalcode" id="newPostalcode" th:value="*{newPostalcode}"/>
+        </tr>
+        <tr>
+          <th>転居先番地</th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
           <td class="error"><span th:if="${#fields.hasErrors('newAddress')}">エラーです！</span></td>
@@ -95,6 +105,11 @@
         </tr>
         <tr>
           <td class="error"><span th:if="${#fields.hasErrors('newAddress')}">エラーです！</span></td>
+        </tr>
+        <tr>
+          <th>引越し予定月 </th>
+          <td><span th:text="*{theday}"></span></td>
+          <input type="hidden" name="theday" id="theday" th:value="*{theday}"/>
         </tr>
         </tbody>
       </table>
