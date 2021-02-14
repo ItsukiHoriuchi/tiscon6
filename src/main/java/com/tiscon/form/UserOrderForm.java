@@ -130,9 +130,7 @@ public class UserOrderForm {
         this.box = box;
     }
 
-    public String getBed() {
-        return bed;
-    }
+    public String getBed() { return bed; }
 
     public void setBed(String bed) {
         this.bed = bed;
