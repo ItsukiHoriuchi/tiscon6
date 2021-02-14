@@ -40,9 +40,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="oldAddress">転居元住所（市区町村以下）</label>
+          <label for="oldPostalcode">転居元郵便番号 </label>
+          <input type="text" id="oldPostalcode" name="oldPostalcode" th:field="*{oldPostalcode}"
+                 class="form-control" value="111-1111"/>
+        </div>
+
+        <div class="form-group">
+          <label for="oldAddress">転居元番地 </label>
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
-                 class="form-control" value="新宿区西新宿1-1-1"/>
+                 class="form-control" value="1-1-1"/>
         </div>
         <div class="form-group">
           <label for="newPrefectureId">転居先住所（都道府県）</label>
@@ -50,10 +56,17 @@
             <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{newPrefectureId}">[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label for="newAddress">転居先住所（市区町村以下）</label>
-          <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
-                 value="札幌市南区1"/>
+          <label for="newPostalcode">転居先郵便番号</label>
+          <input type="text" id="newPostalcode" name="newPostalcode" th:field="*{newPostalcode}" class="form-control"
+                 value="222-2222"/>
+        </div>
+
+        <div class="form-group">
+          <label for="newAddress">転居先番地 </label>
+          <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}"
+                 class="form-control" value="1-1-1"/>
         </div>
         <div class="form-group">
           <label for="theday">引越し予定月</label>

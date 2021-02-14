@@ -30,8 +30,14 @@ public class UserOrderForm {
     @NotBlank(message="転居元住所（市区町村以下）が空欄です")
     private String oldAddress;
 
+    @NotBlank
+    private String oldPostalcode;
+
     @NotBlank(message="転居先住所（都道府県）が空欄です")
     private String newPrefectureId;
+
+    @NotBlank
+    private String newPostalcode;
 
     @NotBlank(message="転居先住所（市区町村以下）が空欄です")
     private String newAddress;
@@ -90,6 +96,14 @@ public class UserOrderForm {
         this.oldPrefectureId = oldPrefectureId;
     }
 
+    public String getOldPostalcode() {
+        return oldPostalcode;
+    }
+
+    public void setOldPostalcode(String oldPostalcode) {
+        this.oldPostalcode = oldPostalcode;
+    }
+
     public String getOldAddress() {
         return oldAddress;
     }
@@ -104,6 +118,14 @@ public class UserOrderForm {
 
     public void setNewPrefectureId(String newPrefectureId) {
         this.newPrefectureId = newPrefectureId;
+    }
+
+    public String getNewPostalcode() {
+        return newPostalcode;
+    }
+
+    public void setNewPostalcode(String newPostalcode) {
+        this.newPostalcode = newPostalcode;
     }
 
     public String getNewAddress() {
