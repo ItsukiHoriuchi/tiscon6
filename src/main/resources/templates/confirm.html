@@ -80,6 +80,11 @@
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
           <td class="error"><span th:if="${#fields.hasErrors('newAddress')}">エラーです！</span></td>
         </tr>
+        <tr>
+          <th>引越し予定月 </th>
+          <td><span th:text="*{theday}"></span></td>
+          <input type="hidden" name="theday" id="theday" th:value="*{theday}"/>
+        </tr>
         </tbody>
       </table>
 
@@ -106,11 +111,7 @@
         <tr>
           <td class="error"><span th:if="${#fields.hasErrors('newAddress')}">エラーです！</span></td>
         </tr>
-        <tr>
-          <th>引越し予定月 </th>
-          <td><span th:text="*{theday}"></span></td>
-          <input type="hidden" name="theday" id="theday" th:value="*{theday}"/>
-        </tr>
+
         </tbody>
       </table>
 
