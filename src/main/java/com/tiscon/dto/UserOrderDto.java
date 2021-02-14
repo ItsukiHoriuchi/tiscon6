@@ -16,6 +16,8 @@ public class UserOrderDto {
 
     private String newAddress;
 
+    private int theday;
+
     private String box;
 
     private String bed;
@@ -80,6 +82,14 @@ public class UserOrderDto {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public int getTheday() {
+        return theday;
+    }
+
+    public void setTheday(int theday) {
+        this.theday = theday;
     }
 
     public int getBox() {
