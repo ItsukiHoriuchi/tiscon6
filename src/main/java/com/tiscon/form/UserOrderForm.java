@@ -13,46 +13,46 @@ import javax.validation.constraints.NotNull;
  */
 public class UserOrderForm {
 
-    @NotBlank
+    @NotBlank(message="氏名が空欄です")
     private String customerName;
 
-    @NotBlank
-    @Numeric
+    @NotBlank(message="連絡先TELが空欄です")
+    @Numeric(message="連絡先TELには半角数字を入力してください(ハイフンは不要)")
     private String tel;
 
     @Email
-    @NotBlank
+    @NotBlank(message="連絡先メールアドレスが空欄です")
     private String email;
 
-    @NotBlank
+    @NotBlank(message="転居元住所（都道府県）が空欄です")
     private String oldPrefectureId;
 
-    @NotBlank
+    @NotBlank(message="転居元住所（市区町村以下）が空欄です")
     private String oldAddress;
 
-    @NotBlank
+    @NotBlank(message="転居先住所（都道府県）が空欄です")
     private String newPrefectureId;
 
-    @NotBlank
+    @NotBlank(message="転居先住所（市区町村以下）が空欄です")
     private String newAddress;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message="段ボールの個数には半角数字を入力してください")
+    @NotBlank(message="段ボールの個数が空欄です")
     private String box;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message="ベッドの個数には半角数字を入力してください")
+    @NotBlank(message="ベッドの個数が空欄です")
     private String bed;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message="自転車の個数には半角数字を入力してください")
+    @NotBlank(message="自転車の個数が空欄です")
     private String bicycle;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message="洗濯機の個数には半角数字を入力してください")
+    @NotBlank(message="洗濯機の個数が空欄です")
     private String washingMachine;
 
-    @NotNull
+    @NotNull(message="洗濯機の設置工事申し込みが空欄です")
     private boolean washingMachineInstallation;
 
     public String getCustomerName() {
