@@ -147,4 +147,22 @@ public class EstimateDao {
         SqlParameterSource paramSource = new MapSqlParameterSource("serviceId", serviceId);
         return parameterJdbcTemplate.queryForObject(sql, paramSource, Integer.class);
     }
+
+    /**
+     * CUSTOMERに同一データがあるかの確認
+     *
+     * @return 真理値
+     */
+    public boolean existSameData(Customer customer) {
+        String sql = "SELECT CUSTOMER_ID FROM CUSTOMER WHERE " +
+                "OLD_PREFECTURE_ID = :oldPrefectureId AND" +
+                "NEW_PREFRCTURE_ID = :newPrefectureId AND" +
+                "CUSTOMER_NAME = : AND" +
+                "TEL = :" +
+                "EMAIL = :" +
+                "OLD_ADDRESS = :" +
+                "NEW_ADDRESS";
+        return parameterJdbcTemplate.query(sql,
+                BeanPropertyRowMapper.newInstance(Prefecture.class));
+    }
 }
