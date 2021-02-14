@@ -193,6 +193,34 @@ ul.label {
     border: 1px solid rgba(34,36,38,.15);
 }
 
+
+
+.error{
+    color: red;
+    background: transparent;
+    background-color: #EDF9F9;
+    border:#EDF9F9;
+    border-top-style:none;
+}
+.table-error{
+    color: red;
+    background: transparent;
+    background-color: #EDF9F9;
+    border-style:none;
+    border-top-style:none;
+}
+
+input[type =hidden]:required,
+input[type =hidden]:invalid,
+textarea:required{
+    border-color:red;
+    background-color:#c20c33;
+}
+
+input:required{
+    border-color:red;
+}
+
 td {
     width: 400px;
 }
